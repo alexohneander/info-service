@@ -29,7 +29,7 @@ func main() {
 	app.Get("/", handler.Default)
 
 	// Metrics
-	app.Get("/metrics", monitor.New(monitor.Config{Title: "MyService Metrics Page", APIOnly: true}))
+	app.Get("/metrics", monitor.New(monitor.Config{Title: "MyService Metrics Page", APIOnly: false}))
 
 	app.Listen(":4000")
 }
