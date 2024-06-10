@@ -2,10 +2,10 @@ package handler
 
 import (
 	"github.com/alexohneander/info-service/service/info"
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 )
 
-func Default(c fiber.Ctx) error {
+func Default(c *fiber.Ctx) error {
 
 	clientInfo := info.GetAllClientInfos(c)
 	// clientInfoString := fmt.Sprintf("%v", clientInfo)

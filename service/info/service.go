@@ -2,11 +2,11 @@ package info
 
 import (
 	"github.com/alexohneander/info-service/model"
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 )
 
 // Public Functions
-func GetAllClientInfos(c fiber.Ctx) model.ClientInfo {
+func GetAllClientInfos(c *fiber.Ctx) model.ClientInfo {
 	clientInfo := model.ClientInfo{}
 
 	// Get Informations
@@ -23,7 +23,7 @@ func GetAllClientInfos(c fiber.Ctx) model.ClientInfo {
 }
 
 // Private Functions
-func getIPv4Address(c fiber.Ctx) string {
+func getIPv4Address(c *fiber.Ctx) string {
 	// Get ip address from request header
 	ipv4 := c.IP()
 
@@ -34,37 +34,37 @@ func getIPv4Address(c fiber.Ctx) string {
 	return ipv4
 }
 
-func getUserAgent(c fiber.Ctx) string {
+func getUserAgent(c *fiber.Ctx) string {
 	userAgent := c.Get("User-Agent")
 	return userAgent
 }
 
-func getLanguage(c fiber.Ctx) string {
+func getLanguage(c *fiber.Ctx) string {
 	language := c.Get("Accept-Language")
 	return language
 }
 
-func getReferer(c fiber.Ctx) string {
+func getReferer(c *fiber.Ctx) string {
 	referer := c.Get("Referer")
 	return referer
 }
 
-func getMethod(c fiber.Ctx) string {
+func getMethod(c *fiber.Ctx) string {
 	method := c.Method()
 	return method
 }
 
-func getEncoding(c fiber.Ctx) string {
+func getEncoding(c *fiber.Ctx) string {
 	encoding := c.Get("Accept-Encoding")
 	return encoding
 }
 
-func getMIMEType(c fiber.Ctx) string {
+func getMIMEType(c *fiber.Ctx) string {
 	mimeType := ""
 	return mimeType
 }
 
-func getXForwardedFor(c fiber.Ctx) string {
+func getXForwardedFor(c *fiber.Ctx) string {
 	// Get ip address from request header
 	xForwardedFor := c.Get("X-Forwarded-For")
 	return xForwardedFor
