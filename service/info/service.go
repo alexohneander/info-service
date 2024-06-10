@@ -60,7 +60,7 @@ func getEncoding(c *fiber.Ctx) string {
 }
 
 func getMIMEType(c *fiber.Ctx) string {
-	mimeType := ""
+	mimeType := c.AcceptsEncodings()
 	return mimeType
 }
 
