@@ -5,8 +5,14 @@ go 1.22.3
 require github.com/gofiber/fiber/v2 v2.52.4
 
 require (
+	github.com/beorn7/perks v1.0.1 // indirect
+	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/gofiber/template v1.8.3 // indirect
 	github.com/gofiber/utils v1.1.0 // indirect
+	github.com/prometheus/client_model v0.5.0 // indirect
+	github.com/prometheus/common v0.48.0 // indirect
+	github.com/prometheus/procfs v0.12.0 // indirect
+	google.golang.org/protobuf v1.33.0 // indirect
 )
 
 require (
@@ -19,6 +25,7 @@ require (
 	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/mileusna/useragent v1.3.4
 	github.com/philhofer/fwd v1.1.2 // indirect
+	github.com/prometheus/client_golang v1.19.1
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/tinylib/msgp v1.1.8 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
