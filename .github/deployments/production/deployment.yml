@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: info-service-deployment
+  labels:
+    app: info-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: info-service
+  template:
+    metadata:
+      labels:
+        app: info-service
+    spec:
+      serviceAccountName: hibernator-account
+      containers:
+      - name: hibernator
+        image: alexohneander/info-service:0.0.2
+        ports:
+        - containerPort: 4000
