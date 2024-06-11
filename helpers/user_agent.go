@@ -18,19 +18,23 @@ func IsBrowser(userAgent string) bool {
 	fmt.Println("Device:", ua.Device)
 	if ua.Mobile {
 		fmt.Println("(Mobile)")
+		return true
 	}
 	if ua.Tablet {
 		fmt.Println("(Tablet)")
+		return true
 	}
 	if ua.Desktop {
 		fmt.Println("(Desktop)")
+		return true
 	}
 	if ua.Bot {
 		fmt.Println("(Bot)")
+		return false
 	}
 	if ua.URL != "" {
 		fmt.Println(ua.URL)
 	}
 
-	return true
+	return false
 }
