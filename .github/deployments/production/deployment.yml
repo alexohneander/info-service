@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: info-service
-        image: alexohneander/info-service:0.0.2
+        image: alexohneander/info-service:0.0.3
         ports:
         - containerPort: 4000
