@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>What is My IP Address?</title>
 
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <div class="content">
         <h1>What is My IP Address?</h1>
-        <br/>
+        <br />
         <h3>Your Connection</h3>
         <table>
             <tr>
-              <th>Info</th>
-              <th>Value</th>
+                <th>Info</th>
+                <th>Value</th>
             </tr>
             <tr>
                 <td class="key"><b>IP Address</b></td>
@@ -48,8 +50,45 @@
                 <td class="key"><b>X-Forwarded-For</b></td>
                 <td lass="value">{{ .clientInfo.XForwardedFor }}</td>
             </tr>
-        </table> 
+        </table>
         <h3>Command Line Interface</h3>
+        <div class="code-blocks">
+            <div class="code-lines">
+                <div class="code-line">
+                    <code>$ curl ip.dev-null.rocks</code>
+                </div>
+                <div class="code-line">
+                    <code>⇒ {{ .clientInfo.IPv4 }}</code>
+                </div>
+            </div>
+            <div class="code-lines">
+                <div class="code-line">
+                    <code>$ curl ip.dev-null.rocks/ip</code>
+                </div>
+                <div class="code-line">
+                    <code>⇒ {{ .clientInfo.IPv4 }}</code>
+                </div>
+            </div>
+            <div class="code-lines">
+                <div class="code-line">
+                    <code>$ curl ip.dev-null.rocks/ua</code>
+                </div>
+                <div class="code-line"><code>⇒ {{ .clientInfo.UserAgent }}</code></div>
+            </div>
+            <div class="code-lines">
+                <div class="code-line">
+                    <code>$ curl ip.dev-null.rocks/lang</code>
+                </div>
+                <div class="code-line"><code>⇒ {{ .clientInfo.Language }}</code></div>
+            </div>
+            <div class="code-lines">
+                <div class="code-line">
+                    <code>$ curl ip.dev-null.rocks/encoding</code>
+                </div>
+                <div class="code-line"><code>⇒ {{ .clientInfo.Encoding }}</code></div>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>

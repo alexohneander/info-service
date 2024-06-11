@@ -1,9 +1,12 @@
-body{
+body {
     padding: 25px 45px;
     font-family: Arial, sans-serif;
+    margin-bottom: 100px;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -17,12 +20,23 @@ td {
     padding: 6px;
 }
 
-td.key{
+td.key {
     width: 250px;
 }
 
-.content{
+.content {
     max-width: 860px;
     width: 100%;
     margin: auto;
 }
+
+.code-lines {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: stretch;
+}
+
+.code-line{
+    border: 1px solid black;
+}
+
