@@ -15,7 +15,7 @@ spec:
         app: info-service
     spec:
       containers:
-      - name: hibernator
+      - name: info-service
         image: alexohneander/info-service:0.0.2
         ports:
         - containerPort: 4000
