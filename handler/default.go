@@ -10,9 +10,6 @@ import (
 func Default(c *fiber.Ctx) error {
 	clientInfo := info.GetAllClientInfos(c)
 
-	// Debug
-	// helpers.IsBrowser(clientInfo.UserAgent)
-
 	if strings.Contains(clientInfo.UserAgent, "curl") {
 		return c.SendString(clientInfo.IPv4)
 	}
@@ -20,4 +17,16 @@ func Default(c *fiber.Ctx) error {
 	return c.Render("index", fiber.Map{
 		"clientInfo": clientInfo,
 	})
+}
+
+func IP(c *fiber.Ctx) error {
+	return c.SendString(info.GetIPv4Address(c))
+}
+
+func UA(c *fiber.Ctx) error {
+	return c.SendString(info.GetUserAgent(c))
+}
+
+func Lang(c *fiber.Ctx) error {
+	return c.SendString(info.GetLanguage(c))
 }

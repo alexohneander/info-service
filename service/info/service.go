@@ -10,9 +10,9 @@ func GetAllClientInfos(c *fiber.Ctx) model.ClientInfo {
 	clientInfo := model.ClientInfo{}
 
 	// Get Informations
-	clientInfo.IPv4 = getIPv4Address(c)
-	clientInfo.UserAgent = getUserAgent(c)
-	clientInfo.Language = getLanguage(c)
+	clientInfo.IPv4 = GetIPv4Address(c)
+	clientInfo.UserAgent = GetUserAgent(c)
+	clientInfo.Language = GetLanguage(c)
 	clientInfo.Referer = getReferer(c)
 	clientInfo.Method = getMethod(c)
 	clientInfo.Encoding = getEncoding(c)
@@ -23,7 +23,7 @@ func GetAllClientInfos(c *fiber.Ctx) model.ClientInfo {
 }
 
 // Private Functions
-func getIPv4Address(c *fiber.Ctx) string {
+func GetIPv4Address(c *fiber.Ctx) string {
 	// Get ip address from request header
 	ipv4 := c.IP()
 
@@ -34,12 +34,12 @@ func getIPv4Address(c *fiber.Ctx) string {
 	return ipv4
 }
 
-func getUserAgent(c *fiber.Ctx) string {
+func GetUserAgent(c *fiber.Ctx) string {
 	userAgent := c.Get("User-Agent")
 	return userAgent
 }
 
-func getLanguage(c *fiber.Ctx) string {
+func GetLanguage(c *fiber.Ctx) string {
 	language := c.Get("Accept-Language")
 	return language
 }
