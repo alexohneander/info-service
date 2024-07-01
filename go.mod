@@ -2,7 +2,7 @@ module github.com/alexohneander/info-service
 
 go 1.22.3
 
-require github.com/gofiber/fiber/v2 v2.52.4
+require github.com/gofiber/fiber/v2 v2.52.5
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
@@ -29,7 +29,7 @@ require (
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/tinylib/msgp v1.1.8 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	github.com/valyala/fasthttp v1.52.0 // indirect
+	github.com/valyala/fasthttp v1.52.0
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	golang.org/x/sys v0.17.0 // indirect
 )
